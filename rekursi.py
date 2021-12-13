@@ -8,10 +8,10 @@ def pangkat_iterasi(a, b):
 
 def pangkat_rekursif(a, b):
     if b <= 1:
-        print("akhir dari rekursif")
+        print(f"akhir dari rekursif {b}")
         return a
     else:
-        print("rekursif")
+        print(f"rekursif {a} x {b}")
         return a * pangkat_rekursif(a, (b-1))
 
 

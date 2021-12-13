@@ -1,12 +1,15 @@
 def fibonacci(n):
-    print(f'fibonacci ke {n}')
-    if n == 0 or n == 1:
-        return n
-    else:
-        return fibonacci(n - 1) + fibonacci(n - 2)
+    if n < 1:
+        return [n]
+
+    listSebelumN = fibonacci(n - 1)
+    angka1 = listSebelumN[-2] if len(listSebelumN) > 2 else 0
+    angka2 = listSebelumN[-1] if len(listSebelumN) > 2 else 1
+
+    return listSebelumN + [angka1 + angka2]
 
 
-angka = int(input('menghitung fibonacci ke: '))
-hasil = fibonacci(angka)
+panjang = int(input('Masukkan panjang deret:'))
 
-print(f'nilainya adalah: {hasil}')
+
+print(fibonacci(panjang - 1))
